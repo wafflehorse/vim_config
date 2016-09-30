@@ -1,0 +1,19 @@
+call plug#begin('~/.vim/plugged')
+
+"Plug 'tmhedberg/SimpylFold'
+Plug 'nvie/vim-flake8'
+
+call plug#end()
+
+let python_highlight_all=1
+syntax on
+
+colorscheme wombat
+
+set guifont=Consolas:h11:cDEFAULT
+
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+
+set clipboard=unnamedplus
