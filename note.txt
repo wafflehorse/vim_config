@@ -1,0 +1,4 @@
+In order to setup symlink to the _gvimrc file
+
+"mklink /H "C:\Program Files (x86)\Vim\_gvimrc" "C:\Users\ppestana\
+vim_config\_gvimrc"
