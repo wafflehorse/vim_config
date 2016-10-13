@@ -1,7 +1,7 @@
 "let python_highlight_all=1
 "syntax on
 
-set lines=50 columns=100
+set lines=50 columns=100 "sets initial gvim screen dimensions
 
 colorscheme wombat
 
