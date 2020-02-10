@@ -51,17 +51,29 @@ set splitright
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|android\|ios'
 let g:ctrlp_working_path_mode = '0' "only indexes working dir
 
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
 " Syntastic Settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
-let g:syntastic_javascript_checkers=['eslint']
+"let g:syntastic_javascript_checkers=['eslint']
 
 " vim-prettier (auto format on save)
 let g:prettier#autoformat = 0
@@ -72,3 +84,4 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap ,c :call NERDComment(0,"toggle")<CR>
 vnoremap ,c :call NERDComment(0,"toggle")<CR>
+nnoremap ,n :NERDTreeFind<CR>
