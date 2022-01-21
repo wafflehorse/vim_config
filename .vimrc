@@ -1,14 +1,8 @@
 call plug#begin()
-"Plug 'arcticicestudio/nord-vim'
-"Plug 'vim-airline/vim-airline'
-"Plug 'tpope/vim-fugitive'
 Plug 'sainnhe/vim-color-forest-night'
 Plug 'w0rp/ale'
-Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()
-
-"colorscheme nord
 
 inoremap jk <ESC>
 let mapleader="'"
@@ -29,4 +23,4 @@ set path=~/
 set path+=**
 set wildmenu
 
-let g:ale_linters = { 'cs': ['OmniSharp'], 'cpp': ['clang'], 'c': ['clang'] }
+let g:ale_linters = { 'cpp': ['clang'], 'c': ['clang'] }
